@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEntrelinhas.Pages.PaginaInicial"
+             Title="PaginaInicial"
+             BackgroundColor="#272626"     
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <!-- Banner superior -->
+            <Image Source="banner.png" Aspect="AspectFill" HeightRequest="150"/>
+
+            <!-- Linha de Ícones (Botões) -->
+            <HorizontalStackLayout Spacing="10" Padding="10">
+                <Button Text="Ícone 1" ImageSource="icone.png"/>
+                <Button Text="Ícone 2" ImageSource="icone.png"/>
+                <Button Text="Ícone 3" ImageSource="icone.png"/>
+                <Button Text="Ícone 4" ImageSource="icone.png"/>
+                <Button Text="Ícone 5" ImageSource="icone.png"/>
+                <Button Text="Ícone 6" ImageSource="icone.png"/>
+            </HorizontalStackLayout>
+
+
+            <!-- Grid de Livros -->
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*">
+                <Image Grid.Row="0" Grid.Column="0" Source="livro.png" Aspect="AspectFit"/>
+                <Image Grid.Row="0" Grid.Column="1" Source="livro.png" Aspect="AspectFit"/>
+                <Image Grid.Row="0" Grid.Column="2" Source="livro.png" Aspect="AspectFit"/>
+                <Image Grid.Row="1" Grid.Column="0" Source="livro.png" Aspect="AspectFit"/>
+                <Image Grid.Row="1" Grid.Column="1" Source="livro.png" Aspect="AspectFit"/>
+                <Image Grid.Row="1" Grid.Column="2" Source="livro.png" Aspect="AspectFit"/>
+            </Grid>
+
+            <!-- Informações dos Livros (Texto) -->
+            <VerticalStackLayout Spacing="10" Padding="10">
+                <Label Text="Rebeca Andrade" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
+                <Label Text='"1984" é uma obra...'/>
+
+                <Label Text="Luiz Silva" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
+                <Label Text='"O Alquimista" é um...'/>
+
+                <Label Text="Jhenifer Lopez" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
+                <Label Text='"Orgulho e...'/>
+            </VerticalStackLayout>
+
+
+            <!-- Botão de Adicionar Resenha -->
+            <Button Text="Adicione sua resenha e seu comentário" />
+
+            <!-- Footer -->
+            <HorizontalStackLayout Spacing="10" Padding="10">
+                <Label Text="Agradecemos Sua Compania!"/>
+                <Image Source="icone.png" HeightRequest="20"/>
+                <Image Source="icone.png" HeightRequest="20"/>
+                <Image Source="icone.png" HeightRequest="20"/>
+                <Image Source="icone.png" HeightRequest="20"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

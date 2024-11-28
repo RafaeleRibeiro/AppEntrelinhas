@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="AppEntrelinhas.MainPage"
+             BackgroundColor="#272626"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#272626" StatusBarStyle="DarkContent" />
+    </ContentPage.Behaviors>
+
+
+    <ScrollView BackgroundColor="#272626" >
+        <VerticalStackLayout Margin="20" Spacing="20">
+            <Label Text="Minha conta" FontSize="Title" FontAttributes="Bold" TextColor="#D9D9D9"/>
+
+            <Frame BackgroundColor="#3A506B" Padding="20" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Sign In" FontAttributes="Bold"/>
+                    <Entry Placeholder="Email"  />
+                    <Entry Placeholder="Senha" IsPassword="True"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#3A506B" Padding="20" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Sign Up" FontAttributes="Bold"/>
+                    <Entry Placeholder="Email" />
+                    <Entry Placeholder="Senha" IsPassword="True"/>
+                    <Entry Placeholder="Nome Completo" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Submit" BackgroundColor="#3A506B" TextColor="White" CornerRadius="5" Clicked="Button_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
