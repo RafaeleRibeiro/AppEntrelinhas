@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEntrelinhas.Pages.Login"
+             Title="Login"
+             Shell.NavBarIsVisible="False">
+
+    <ScrollView BackgroundColor="{AppThemeBinding Light=#FFF,Dark=#272626}" >
+        <VerticalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image Source="logo.png" />
+                <ImageButton x:Name="LoginFalso" Source="perfil.svg" HeightRequest="40" WidthRequest="40" Padding="10" CornerRadius="100"/>
+            </HorizontalStackLayout>
+            <VerticalStackLayout Margin="20">
+
+                <Label Text="Minha conta" FontSize="Title" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#1E1E1E, Dark=#D9D9D9}"/>
+                <VerticalStackLayout Margin="0,20" Spacing="20" Padding="30" BackgroundColor="{AppThemeBinding Light=#809088 , Dark=#32423A}">
+
+                    <Label TextColor="#FFF" Text="Sign In" FontAttributes="Bold"/>
+                    <Frame BackgroundColor="#FFF" Margin="0,-10,0,0" Padding="20" CornerRadius="0">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Email" TextColor="#000"/>
+                            <Entry BackgroundColor="#ededed" />
+                            <Label Text="Senha" TextColor="#000"/>
+                            <Entry BackgroundColor="#ededed" IsPassword="True"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Label TextColor="#FFF" Text="Sign Up" FontAttributes="Bold"/>
+                    <Frame BackgroundColor="#FFF" Margin="0,-10,0,0" Padding="20" CornerRadius="0">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Email" TextColor="#000"/>
+                            <Entry BackgroundColor="#ededed" />
+                            <Label Text="Senha" TextColor="#000"/>
+                            <Entry BackgroundColor="#ededed" IsPassword="True"/>
+                            <Label Text="Nome Completo" TextColor="#000"/>
+                            <Entry BackgroundColor="#ededed" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </VerticalStackLayout>
+                <Button x:Name="submit" Text="Submit" WidthRequest="150" BackgroundColor="#395144" TextColor="White" CornerRadius="5" Clicked="submit_Clicked"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

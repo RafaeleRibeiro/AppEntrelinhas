@@ -3,59 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppEntrelinhas.Pages.PaginaInicial"
              Title="PaginaInicial"
-             BackgroundColor="#272626"     
+             BackgroundColor="{AppThemeBinding Light=#fff ,Dark=#272626}"     
              Shell.NavBarIsVisible="False">
     <ScrollView>
+
         <VerticalStackLayout>
 
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image Source="logo.png" />
+                <ImageButton x:Name="Login" Source="perfil.svg" HeightRequest="40" WidthRequest="40" Padding="10" CornerRadius="100" Clicked="Login_Clicked"/>
+            </HorizontalStackLayout>
+
             <!-- Banner superior -->
-            <Image Source="banner.png" Aspect="AspectFill" HeightRequest="150"/>
+            <Image Source="banner.png" Aspect="AspectFill" HeightRequest="90"/>
 
             <!-- Linha de Ícones (Botões) -->
-            <HorizontalStackLayout Spacing="10" Padding="10">
-                <Button Text="Ícone 1" ImageSource="icone.png"/>
-                <Button Text="Ícone 2" ImageSource="icone.png"/>
-                <Button Text="Ícone 3" ImageSource="icone.png"/>
-                <Button Text="Ícone 4" ImageSource="icone.png"/>
-                <Button Text="Ícone 5" ImageSource="icone.png"/>
-                <Button Text="Ícone 6" ImageSource="icone.png"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Padding="10">
+                <ImageButton CornerRadius="100" x:Name="Ficcao" Clicked="Ficcao_Clicked" WidthRequest="50" HeightRequest="50" Padding="10" Source="icone.png" Aspect="AspectFit"/>
+                <ImageButton CornerRadius="100" x:Name="Ficca" Clicked="Ficcao_Clicked" WidthRequest="50" HeightRequest="50" Padding="10" Source="icone.png" Aspect="AspectFit"/>
+                <ImageButton CornerRadius="100" x:Name="Ficc" Clicked="Ficcao_Clicked" WidthRequest="50" HeightRequest="50" Padding="10" Source="icone.png" Aspect="AspectFit"/>
+                <ImageButton CornerRadius="100" x:Name="Fic" Clicked="Ficcao_Clicked" WidthRequest="50" HeightRequest="50" Padding="10" Source="icone.png" Aspect="AspectFit"/>
+                <ImageButton CornerRadius="100" x:Name="Fi" Clicked="Ficcao_Clicked" WidthRequest="50" HeightRequest="50" Padding="10" Source="icone.png" Aspect="AspectFit"/>
+                <ImageButton CornerRadius="100" x:Name="F" Clicked="Ficcao_Clicked" WidthRequest="50" HeightRequest="50" Padding="10" Source="icone.png" Aspect="AspectFit"/>
             </HorizontalStackLayout>
 
 
             <!-- Grid de Livros -->
-            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*">
-                <Image Grid.Row="0" Grid.Column="0" Source="livro.png" Aspect="AspectFit"/>
-                <Image Grid.Row="0" Grid.Column="1" Source="livro.png" Aspect="AspectFit"/>
-                <Image Grid.Row="0" Grid.Column="2" Source="livro.png" Aspect="AspectFit"/>
-                <Image Grid.Row="1" Grid.Column="0" Source="livro.png" Aspect="AspectFit"/>
-                <Image Grid.Row="1" Grid.Column="1" Source="livro.png" Aspect="AspectFit"/>
-                <Image Grid.Row="1" Grid.Column="2" Source="livro.png" Aspect="AspectFit"/>
+            <Grid Padding="0,20" RowSpacing="30" ColumnDefinitions="*,*,*" RowDefinitions="*,*">
+                <ImageButton Grid.Row="0" Grid.Column="0" Source="livro.png" Aspect="AspectFit"/>
+                <ImageButton Grid.Row="0" Grid.Column="1" Source="livro.png" Aspect="AspectFit"/>
+                <ImageButton Grid.Row="0" Grid.Column="2" Source="livro.png" Aspect="AspectFit"/>
+                <ImageButton Grid.Row="1" Grid.Column="0" Source="livro.png" Aspect="AspectFit"/>
+                <ImageButton Grid.Row="1" Grid.Column="1" Source="livro.png" Aspect="AspectFit"/>
+                <ImageButton Grid.Row="1" Grid.Column="2" Source="livro.png" Aspect="AspectFit"/>
             </Grid>
 
             <!-- Informações dos Livros (Texto) -->
             <VerticalStackLayout Spacing="10" Padding="10">
-                <Label Text="Rebeca Andrade" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
-                <Label Text='"1984" é uma obra...'/>
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*" HorizontalOptions="Center" ColumnSpacing="5" RowSpacing="20">
+                    <Label Grid.Column="0" Grid.Row="0" Text="Rebeca Andrade" FontAttributes="Bold" FontSize="Medium" TextColor="{AppThemeBinding Light=#000, Dark=#D9D9D9}"/>
+                    <Label Grid.Column="0" Grid.Row="1" Text='"1984" é uma obra poderosa e perturbadora que oferece uma visão sombria de um futuro onde um regime...' TextColor="#D9D9D9"/>
 
-                <Label Text="Luiz Silva" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
-                <Label Text='"O Alquimista" é um...'/>
+                    <Label Grid.Column="1" Grid.Row="0" Text="Luiz Silva" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
+                    <Label Grid.Column="1" Grid.Row="1" Text='"O Alquimista" é um romance filosófico e espiritual que segue a jornada de Santiago, um jovem pastor andaluz que sonha...' TextColor="#D9D9D9"/>
 
-                <Label Text="Jhenifer Lopez" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
-                <Label Text='"Orgulho e...'/>
+                    <Label Grid.Column="2" Grid.Row="0" Text="Jhenifer Lopez" FontAttributes="Bold" FontSize="Medium" TextColor="#D9D9D9"/>
+                    <Label Grid.Column="2" Grid.Row="1" Text='"Orgulho e Preconceito" é um dos romances mais amados e conhecidos da literatura inglesa. Publicado...' TextColor="#D9D9D9"/>
+                </Grid>
             </VerticalStackLayout>
 
 
             <!-- Botão de Adicionar Resenha -->
-            <Button Text="Adicione sua resenha e seu comentário" />
+            <Label HorizontalOptions="Center" Padding="0,20,0,0" Text="Adicione sua resenha e seu comentário" />
+            <Button HorizontalOptions="Center" Margin="0,-5,0,0" Padding="0,-8,0,0" BackgroundColor="Transparent" CornerRadius="100" WidthRequest="40" HeightRequest="40" FontSize="40" TextColor="#D9D9D9" Text="+"/>
 
             <!-- Footer -->
-            <HorizontalStackLayout Spacing="10" Padding="10">
-                <Label Text="Agradecemos Sua Compania!"/>
-                <Image Source="icone.png" HeightRequest="20"/>
-                <Image Source="icone.png" HeightRequest="20"/>
-                <Image Source="icone.png" HeightRequest="20"/>
-                <Image Source="icone.png" HeightRequest="20"/>
-            </HorizontalStackLayout>
+
+            <VerticalStackLayout BackgroundColor="#4D2B0D">
+                <Label HorizontalOptions="End" Padding="30,0" Text="Agradecemos Sua Compania!"/>
+                <HorizontalStackLayout HorizontalOptions="End" Spacing="0" Padding="5">
+                    <ImageButton Source="icone.png" WidthRequest="40" HeightRequest="40" Padding="10" CornerRadius="100"/>
+                    <ImageButton Source="icone.png" WidthRequest="40" HeightRequest="40" Padding="10" CornerRadius="100"/>
+                    <ImageButton Source="icone.png" WidthRequest="40" HeightRequest="40" Padding="10" CornerRadius="100"/>
+                    <ImageButton Source="icone.png" WidthRequest="40" HeightRequest="40" Padding="10" CornerRadius="100"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
